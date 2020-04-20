@@ -4,8 +4,8 @@
   "description": "NekoFilm GraphQL Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js -D"
+    "start": "nodemon src/index.js -D",
+    "now-start": "node src/index.js"
   },
   "keywords": [],
   "author": "Jordi Casesnoves",
