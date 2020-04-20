@@ -1,3 +1,4 @@
 const { userType } = require("./userType");
+const { movieType } = require("./movieType");
 
-module.exports = { userType };
+module.exports = { userType, movieType };

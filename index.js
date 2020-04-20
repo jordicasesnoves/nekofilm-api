@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const { ApolloServer, gql, graphqlExpress } = require("apollo-server-express");
 const { typeDefs } = require("./src/typeDefs/index.js");
