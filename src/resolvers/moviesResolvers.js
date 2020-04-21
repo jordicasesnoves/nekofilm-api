@@ -12,8 +12,21 @@ const fetchMovies = async ({ title } = {}) => {
 
   let response = await fetch(apiURL, config);
   let { results } = await response.json();
-  console.log(results);
   return results;
+};
+
+const fetchMovie = async ({ id } = {}) => {
+  const apiURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+  const config = {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  };
+
+  let response = await fetch(apiURL, config);
+  let result = await response.json();
+  return result;
 };
 
 const moviesResolvers = {
@@ -21,6 +34,10 @@ const moviesResolvers = {
     movies: (_, args) => {
       const { title } = args;
       return fetchMovies({ title });
+    },
+    movie: (_, args) => {
+      const { id } = args;
+      return fetchMovie({ id });
     },
   },
 };
