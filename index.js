@@ -13,7 +13,12 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true,
+  introspection: true,
+  playground: {
+    settings: {
+      "editor.theme": "light",
+    },
+  },
   debug: false,
 });
 

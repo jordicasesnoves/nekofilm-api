@@ -18,6 +18,7 @@ const movieType = gql`
     vote_count: Int!
     video: Boolean!
     vote_average: Float!
+    credits: MovieCredits
   }
 
   type Movies {

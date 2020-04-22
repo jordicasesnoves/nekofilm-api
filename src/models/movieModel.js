@@ -31,7 +31,7 @@ const fetchMovies = async ({ title } = {}) => {
 };
 
 const fetchMovie = async ({ id } = {}) => {
-  const apiURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+  const apiURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,images,credits,reviews`;
   const config = {
     method: "GET",
     headers: {
