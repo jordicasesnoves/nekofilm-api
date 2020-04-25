@@ -19,18 +19,6 @@ const ShowType = gql`
     vote_average: Float!
   }
 
-  type ShowDetail {
-    _id: ID!
-    air_date: String
-    episodes: [ShowEpisode]!
-    name: String!
-    overview: String!
-    id: Int!
-    poster_path: String
-    season_number: Int!
-    credits: ShowCredits
-  }
-
   type Shows {
     info: Info
     results: [Show]

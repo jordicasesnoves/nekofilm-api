@@ -4,7 +4,9 @@ const {
   MovieType,
   infoType,
   MovieCreditsType,
+  MovieDetailType,
   ShowType,
+  ShowDetailType,
   ShowCreditsType,
   ShowEpisodeType,
 } = require("./types");
@@ -15,7 +17,9 @@ const typeDefs = [
   MovieType,
   infoType,
   MovieCreditsType,
+  MovieDetailType,
   ShowType,
+  ShowDetailType,
   ShowCreditsType,
   ShowEpisodeType,
 ];

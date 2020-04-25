@@ -1,8 +1,7 @@
 const { gql } = require("apollo-server-express");
 
 const ShowCreditsType = gql`
-  # Get the cast and crew for a movie.
-  # https://developers.themoviedb.org/3/movies/get-movie-credits
+  # Get the cast and crew for a tv show.
   type ShowCredits {
     id: ID
     cast: [ShowCast]!
