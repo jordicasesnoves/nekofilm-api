@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
-const { ApolloServer, gql, graphqlExpress } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 const { typeDefs } = require("./src/typeDefs/index.js");
 const { resolvers } = require("./src/resolvers/index.js");
 
@@ -11,15 +11,15 @@ const PORT = process.env.PORT || 3500;
 const app = express();
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  typeDefs: typeDefs,
+  resolvers: resolvers,
   introspection: true,
   playground: {
     settings: {
       "editor.theme": "light",
     },
   },
-  debug: false,
+  debug: true,
 });
 
 server.applyMiddleware({ app, path: "/graphql" });

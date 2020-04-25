@@ -2,8 +2,8 @@ const fetch = require("node-fetch");
 const { ApolloError } = require("apollo-server-express");
 const apiKey = process.env.APIKEY;
 
-const fetchMovies = async ({ title } = {}) => {
-  const apiURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`;
+const fetchShows = async ({ name } = {}) => {
+  const apiURL = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${name}`;
   const config = {
     method: "GET",
     headers: {
@@ -30,8 +30,8 @@ const fetchMovies = async ({ title } = {}) => {
   };
 };
 
-const fetchMovie = async ({ id } = {}) => {
-  const apiURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,images,credits,reviews`;
+const fetchShow = async ({ id } = {}) => {
+  const apiURL = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&append_to_response=videos,images,credits,reviews`;
   const config = {
     method: "GET",
     headers: {
@@ -42,14 +42,13 @@ const fetchMovie = async ({ id } = {}) => {
   let response = await fetch(apiURL, config);
   let result = await response.json();
 
-  if (response.status !== 200) {
+  if (response.status != 200) {
     throw new ApolloError(response.statusText, response.status);
   }
-
   return { ...result };
 };
 
 module.exports = {
-  fetchMovie,
-  fetchMovies,
+  fetchShow,
+  fetchShows,
 };

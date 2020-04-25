@@ -1,13 +1,19 @@
-const { userType } = require("./userType");
-const { movieType } = require("./movieType");
-const { personType } = require("./personType");
-const { infoType } = require("./infoType");
+const { userType } = require("./UserType");
+const { MovieType } = require("./MovieType");
+const { personType } = require("./PersonType");
+const { infoType } = require("./InfoType");
 const { MovieCreditsType } = require("./MovieCreditsType");
+const { ShowType } = require("./ShowType");
+const { ShowCreditsType } = require("./ShowCreditsType");
+const { ShowEpisodeType } = require("./ShowEpisodeType");
 
 module.exports = {
   userType,
-  movieType,
+  MovieType,
   personType,
   infoType,
   MovieCreditsType,
+  ShowType,
+  ShowCreditsType,
+  ShowEpisodeType,
 };

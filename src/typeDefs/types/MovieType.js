@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 // Search movies based Type
 // https://developers.themoviedb.org/3/search/search-movies
-const movieType = gql`
+const MovieType = gql`
   type Movie {
     poster_path: String
     adult: Boolean!
@@ -28,5 +28,5 @@ const movieType = gql`
 `;
 
 module.exports = {
-  movieType,
+  MovieType,
 };
