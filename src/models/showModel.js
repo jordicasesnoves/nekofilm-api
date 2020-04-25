@@ -18,7 +18,7 @@ const fetchShows = async ({ name } = {}) => {
     throw new ApolloError(response.statusText, response.status);
   }
   if (json.total_results == 0) {
-    throw new ApolloError(`No results found for query: ${title}`);
+    throw new ApolloError(`No results found for query: ${name}`);
   }
 
   let { page, total_results, total_pages, results } = json;
