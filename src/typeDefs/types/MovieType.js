@@ -7,7 +7,7 @@ const MovieType = gql`
     poster_path: String
     adult: Boolean!
     overview: String!
-    release_date: String!
+    release_date: String
     genre_ids: [ID]!
     id: ID!
     original_title: String!

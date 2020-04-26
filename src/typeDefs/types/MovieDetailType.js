@@ -31,7 +31,7 @@ const MovieDetailType = gql`
     vote_count: Int!
   }
 
-  enum MovieDetailStatus {
+  enum MovieDetailStatus  {
     Rumored
     Planned
     "In Production"
