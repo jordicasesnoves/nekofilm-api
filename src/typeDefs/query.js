@@ -8,13 +8,13 @@ const query = gql`
     movies(title: String!): Movies
 
     "Get movie details with a movie id"
-    movie(id: ID!): MovieDetail
+    movie(id: Int!): MovieDetail
 
     "Search for TV Shows by title"
     shows(name: String!): Shows
 
     "Get TV Show details with a tvshow id"
-    show(id: ID!): ShowDetail
+    show(id: Int!): ShowDetail
   }
 `;
 
