@@ -1,11 +1,11 @@
 const users = [
   {
     id: "1",
-    name: "J.K. Rowling",
+    email: "jkrowling@gmail.com",
   },
   {
     id: "2",
-    name: "Michael Crichton",
+    email: "heydaddy@hello.com",
   },
 ];
 

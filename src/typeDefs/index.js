@@ -1,4 +1,5 @@
 const { query } = require("./query");
+const { mutation } = require("./mutation");
 const {
   userType,
   MovieType,
@@ -13,6 +14,7 @@ const {
 
 const typeDefs = [
   query,
+  mutation,
   userType,
   MovieType,
   infoType,
