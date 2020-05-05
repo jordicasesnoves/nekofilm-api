@@ -3,6 +3,7 @@ const { fetchShow, fetchShows } = require("../models/showModel");
 const showsResolvers = {
   Query: {
     shows: async (parent, args, context) => {
+      if (!context.user) return null;
       const { name } = args;
       return fetchShows({ name });
     },

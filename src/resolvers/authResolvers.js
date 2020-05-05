@@ -1,8 +1,8 @@
-const { sign } = require("jsonwebtoken");
 const User = require("../models/userModel");
+const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
 const service = require("../services");
-const { ApolloError } = require("apollo-server-express");
+const { ApolloError, AuthenticationError } = require("apollo-server-express");
 
 const authResolvers = {
   Mutation: {
@@ -23,13 +23,24 @@ const authResolvers = {
         const user = await User.create(newUser);
         return service.createToken(user);
       } else {
-        throw new ApolloError(`User already exists`);
+        // If the user is already signed up, throw an error
+        throw new AuthenticationError(`User already exists`);
       }
     },
-    login: async (_, { email, password }, { res }) => {
-      const user = await User.find();
-      const accessToken = sign({ userId: user.id });
-      return {};
+    login: async (_, { email, password }) => {
+      const user = await User.findOne({ email: email });
+
+      if (!user) {
+        throw new AuthenticationError("No user with that email");
+      }
+
+      const validPassword = await bcrypt.compareSync(password, user.password);
+
+      if (!validPassword) {
+        throw new AuthenticationError("Incorrect password");
+      }
+
+      return service.createToken(user);
     },
   },
 };
