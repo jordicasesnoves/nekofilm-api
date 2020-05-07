@@ -8,6 +8,7 @@ const { ShowType } = require("./ShowType");
 const { ShowDetailType } = require("./ShowDetailType");
 const { ShowCreditsType } = require("./ShowCreditsType");
 const { ShowEpisodeType } = require("./ShowEpisodeType");
+const { VideoType } = require("./VideoType");
 
 module.exports = {
   userType,
@@ -20,4 +21,5 @@ module.exports = {
   ShowDetailType,
   ShowCreditsType,
   ShowEpisodeType,
+  VideoType,
 };

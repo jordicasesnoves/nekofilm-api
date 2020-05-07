@@ -31,6 +31,7 @@ const ShowDetailType = gql`
     type: String!
     vote_average: Float!
     vote_count: Int!
+    videos: Videos
   }
 
   extend type ShowDetail {

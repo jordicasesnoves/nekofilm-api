@@ -27,11 +27,12 @@ const MovieDetailType = gql`
     tagline: String
     title: String!
     video: Boolean!
+    videos: Videos
     vote_average: Float!
     vote_count: Int!
   }
 
-  enum MovieDetailStatus  {
+  enum MovieDetailStatus {
     Rumored
     Planned
     "In Production"

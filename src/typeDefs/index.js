@@ -10,6 +10,7 @@ const {
   ShowDetailType,
   ShowCreditsType,
   ShowEpisodeType,
+  VideoType,
 } = require("./types");
 
 const typeDefs = [
@@ -24,6 +25,7 @@ const typeDefs = [
   ShowDetailType,
   ShowCreditsType,
   ShowEpisodeType,
+  VideoType,
 ];
 
 module.exports = { typeDefs };
