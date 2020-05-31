@@ -49,7 +49,36 @@ const fetchMovie = async ({ id } = {}) => {
   return { ...result };
 };
 
+const fetchTrendingMovies = async () => {
+  const apiURL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`;
+  const config = {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  };
+
+  let response = await fetch(apiURL, config);
+  let json = await response.json();
+
+  if (response.status != 200) {
+    throw new ApolloError(response.statusText, response.status);
+  }
+  if (json.total_results == 0) {
+    throw new ApolloError(`No results found for query: ${title}`);
+  }
+
+  let { page, total_results, total_pages, results } = json;
+  let info = { page, total_results, total_pages };
+
+  return {
+    info: info,
+    results,
+  };
+};
+
 module.exports = {
   fetchMovie,
   fetchMovies,
+  fetchTrendingMovies,
 };

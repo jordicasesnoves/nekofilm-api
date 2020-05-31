@@ -1,7 +1,16 @@
-const { fetchShow, fetchShows } = require("../models/showModel");
+const {
+  fetchShow,
+  fetchShows,
+  fetchTrendingShows,
+} = require("../models/showModel");
 
 const showsResolvers = {
   Query: {
+    showsTrending: async (parent, args, context) => {
+      // Disabled required auth for demo purposes
+      // if (!context.user) return null;
+      return fetchTrendingShows();
+    },
     shows: async (parent, args, context) => {
       // Disabled required auth for demo purposes
       // if (!context.user) return null;

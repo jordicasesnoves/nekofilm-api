@@ -1,7 +1,16 @@
-const { fetchMovie, fetchMovies } = require("../models/movieModel");
+const {
+  fetchMovie,
+  fetchMovies,
+  fetchTrendingMovies,
+} = require("../models/movieModel");
 
 const moviesResolvers = {
   Query: {
+    moviesTrending: async (parent, args, context) => {
+      // Disabled required auth for demo purposes
+      // if (!context.user) return null;
+      return fetchTrendingMovies();
+    },
     movies: async (parent, args, context) => {
       // Disabled required auth for demo purposes
       // if (!context.user) return null;
