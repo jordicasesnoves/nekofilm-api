@@ -22,7 +22,7 @@
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11",
     "mongoose-timestamp": "^0.6.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
